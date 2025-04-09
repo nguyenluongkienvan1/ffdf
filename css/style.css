@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-primary: 'Poppins', sans-serif;
+  --color-bg: #0f0f0f;
+  --color-text: #ffffff;
+  --color-accent: #ff4081;
+  --color-highlight: #ffd700;
+  --color-box: rgba(255, 255, 255, 0.08);
+  --shadow-glow: 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.container-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.content {
+  width: 100%;
+  max-width: 800px;
+}
+
+.happy__content h1 {
+  font-size: clamp(2.4rem, 4vw, 4.8rem);
+  color: var(--color-highlight);
+  text-shadow: 2px 2px 10px var(--color-accent);
+  margin-bottom: 1.5rem;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.happy__content p {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  color: var(--color-text);
+  text-align: left;
+  line-height: 1.8;
+  background: var(--color-box);
+  padding: 2rem;
+  border-radius: 1.2rem;
+  box-shadow: var(--shadow-glow);
+  animation: fadeIn 2s ease-in-out;
+}
+
+.countdown__content .headline h1 {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+  color: var(--color-highlight);
+  text-shadow: 1px 1px 8px var(--color-accent);
+}
+
+.countdown__content .subline h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  margin-bottom: 1.5rem;
+  color: #dddddd;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  background: var(--color-box);
+  padding: 1rem 1.8rem;
+  border-radius: 1.2rem;
+  font-size: clamp(1.3rem, 3.5vw, 2rem);
+  font-weight: bold;
+  text-align: center;
+  min-width: 70px;
+  box-shadow: var(--shadow-glow);
+  color: #ffe6f1;
+}
+
+li span {
+  display: block;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: #ffffff;
+}
+
+.container-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .container-content {
+    padding: 1rem;
+  }
+
+  ul li {
+    padding: 0.8rem;
+    min-width: 60px;
+  }
+
+  .happy__content p {
+    font-size: 1.4rem;
+    padding: 1.2rem;
+  }
+}
